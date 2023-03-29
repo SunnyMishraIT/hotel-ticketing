@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Create a Ticket</title>
+    <style>
+      /* Styles for the form */
+      form {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      input[type="text"], textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+        font-size: 16px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      /* Styles for the ticket status options */
+      .status-options {
+        display: flex;
+        margin-bottom: 20px;
+      }
+      .status-option {
+        margin-right: 10px;
+      }
+      .status-option label {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="customer-name">Customer Name:</label>
+      <input type="text" id="customer-name" name="customer-name" required>
+      
+      <label for="room-number">Room Number:</label>
+      <input type="text" id="room-number" name="room-number" required>
+      
+      <label for="issue-type">Issue Type:</label>
+      <input type="text" id="issue-type" name="issue-type" required>
+      
+      <label for="issue-description">Issue Description:</label>
+      <textarea id="issue-description" name="issue-description" rows="5" required></textarea>
+      
+      <label for="status">Status:</label>
+      <div class="status-options">
+        <div class="status-option">
+          <input type="radio" id="status-pending" name="status" value="pending" checked>
+          <label for="status-pending">Pending</label>
+        </div>
+        <div class="status-option">
+          <input type="radio" id="status-resolved" name="status" value="resolved">
+          <label for="status-resolved">Resolved</label>
+        </div>
+      </div>
+      
+      <input type="submit" value="Create Ticket">
+    </form>
+  </body>
+</html> -->
+<!-- create-ticket.component.html -->
+<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+    <label for="customer-name">Customer Name:</label>
+    <input type="text" id="customer-name" name="customerName" formControlName="name" [(ngModel)]="customerName" required>
+  
+    <label for="room-number">Room Number:</label>
+    <input type="text" id="room-number" name="roomNumber" formControlName="roomNo" [(ngModel)]="roomNumber" required>
+  
+    <label for="issue-type">Issue Type:</label>
+    <input type="text" id="issue-type" name="issueType" formControlName="issue" [(ngModel)]="issueType" required>
+  
+    <label for="issue-description">Issue Description:</label>
+    <textarea id="issue-description" name="issueDescription" formControlName="description" [(ngModel)]="issueDescription" rows="5" required></textarea>
+  
+    <!-- <label for="status">Status:</label>
+    <div class="status-options">
+      <div class="status-option">
+        <input type="radio" id="status-pending" name="status" value="pending" [(ngModel)]="status" checked>
+        <label for="status-pending">Pending</label>
+      </div>
+      <div class="status-option">
+        <input type="radio" id="status-resolved" name="status" value="resolved" [(ngModel)]="status">
+        <label for="status-resolved">Resolved</label>
+      </div>
+    </div> -->
+  
+    <button type="submit">Create Ticket</button>
+  </form>
+  

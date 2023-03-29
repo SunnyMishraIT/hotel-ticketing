@@ -1,0 +1,27 @@
+<h2 mt-5>Pending Tickets</h2>
+    <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Complaint Id</th>
+            <th scope="col">Room No</th>
+            <th scope="col">Name</th>
+            <th scope="col">Issue Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Status</th>
+            <th scope="col">Update Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let element of activeTickets">
+            <th scope="row">{{element.id}}</th>
+            <td>{{element.roomNumber}}</td>
+            <td>{{element.customerName}}</td>
+            <td>{{element.issueType}}</td>
+            <td>{{element.issueDescription}}</td>
+            <td>{{element.dateTime | date : 'medium' }}</td>
+            <td>{{element.status}}</td>
+            <td><button class="btn btn-success" (click)="resolved(element)">Resolved</button></td>
+          </tr>
+        </tbody>
+      </table>
