@@ -15,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PendingTicketsComponent } from './pending-tickets/pending-tickets.component';
 import { ResolvedTicketsComponent } from './resolved-tickets/resolved-tickets.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    NgChartsModule,
     FormsModule,
     AppRoutingModule
   ],
