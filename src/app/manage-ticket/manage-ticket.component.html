@@ -1,27 +1,58 @@
-<div class="container mt-3">
+<div class="mt-3">
     <h2>All Tickets</h2>
     <table class="table table-hover table-bordered">
         <thead>
           <tr>
-            <th scope="col">Complaint Id</th>
-            <th scope="col">Room No</th>
-            <th scope="col">Name</th>
-            <th scope="col">Issue Type</th>
-            <th scope="col">Description</th>
-            <th scope="col">Date and Time</th>
-            <th scope="col">Status</th>
-            <th scope="col">Update</th>
+            <th scope="col" *ngFor="let headers of columnHeaders">{{ headers }}</th>
+            <th scope="col">&nbsp;</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let element of allTickets">
-            <th scope="row">{{element.id}}</th>
+          <tr *ngFor="let element of allTickets; let i = index">
+            <th scope="row">{{i + 1}}</th>
+            <td>{{ element.TicketNumber}}</td>
+            <td>{{ element.Subject}}</td>
+            <td>{{ element.Email}}</td>
+            <td>{{ element.Status}}</td>
+            <td>{{ element.Date}}</td>
+            <td>{{ element.Assignedby}}</td>
+            <td>{{ element.Channel}}</td>
+            <td>{{ element.TypeofComplaint}}</td>
+            <td>{{ element.Category}}</td>
+            <td>{{ element.CustomerName}}</td>
+            <td>{{ element.CustomerMailId}}</td>
+            <td>{{ element.ContactNo}}</td>
+            <td>{{ element.Location}}</td>
+            <td>{{ element.State}}</td>
+            <td>{{ element.ProductManufacture}}</td>
+            <td>{{ element.ProductName}}</td>
+            <td>{{ element.MFDDate}}</td>
+            <td>{{ element.BatchNo}}</td>
+            <td>{{ element.QtyofSpoiledProduct}}</td>
+            <td>{{ element.BoughtFrom}}</td>
+            <td>{{ element.ComplaintBrief}}</td>
+            <td>{{ element.FirstResponseDate}}</td>
+            <td>{{ element.Responsetemplate}}</td>
+            <td>{{ element.ComplaintSummary}}</td>
+            <td>{{ element.ResolutionSummary}}</td>
+            <td>{{ element.ActionTaken}}</td>
+            <td>{{ element.Dateofclosure}}</td>
+            <td>{{ element.ActionApprovedBy}}</td>
+            <td>{{ element.ComplaintSharedwithfactory}}</td>
+            <td>{{ element.FactoryResolutionSummary}}</td>
+            <td>{{ element.FactoryresolutionDate}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="editCalled()">
+                Edit
+              </button>
+            </td>
+            <!-- <th scope="row">{{element.id}}</th>
             <td>{{element.roomNumber}}</td>
             <td>{{element.customerName}}</td>
             <td>{{element.issueType}}</td>
             <td>{{element.issueDescription}}</td>
             <td>{{element.dateTime | date : 'medium' }}</td>
-            <td>{{element.status}}</td>
+            <td>{{element.status}}</td> -->
             <td *ngIf="element.status == 'Pending'"><button class="btn btn-success" (click)="resolved(element)">Resolved</button></td>
             <td *ngIf="element.status == 'Resolved'"><button class="btn btn-danger" (click)="deleteTicket(element)">Delete</button></td>
           </tr>

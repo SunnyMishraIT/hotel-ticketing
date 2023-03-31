@@ -17,6 +17,9 @@ export class CreateTicketComponent {
   ticketForm!: FormGroup;
   constructor(private getdata : TicketingserviceService, private fb : FormBuilder){
     this.ticketForm = new FormGroup({
+      ticketno : new FormControl(null,Validators.required),
+      subject : new FormControl(null,Validators.required),
+
       name : new FormControl(Validators.required),
       roomNo : new FormControl(Validators.required),
       issue : new FormControl(Validators.required),
