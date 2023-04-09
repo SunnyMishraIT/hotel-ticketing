@@ -1,11 +1,15 @@
 /* create-ticket.component.css */
 form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 600px;
-    margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 600px;
+  margin: auto;
+  align-items: center;
+  flex-wrap: wrap;
+  align-content: space-evenly;
   }
+  
   
   label {
     font-weight: bold;
@@ -48,4 +52,14 @@ form {
     color: #555;
     cursor: not-allowed;
   }
-  
+  #firstCol {
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    justify-content: center;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }

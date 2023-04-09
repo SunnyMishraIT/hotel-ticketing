@@ -9,10 +9,10 @@ export class TicketingserviceService {
   constructor() { }
   allTickets : any [] = [
     {
-    "Srno" : 1,
+    "id" : 1,
     "TicketNumber" : "1DADTES234567",	
     "Subject" : "Dlect",	
-    "Email" : "dlecta@dlecta",	
+    "Email" : "Hello thanks we are working on your issue",	
     "Status" : "Pending",	
     "Date" : "1/03/2023",	
     "Assignedby" : "Manager",	
@@ -43,10 +43,10 @@ export class TicketingserviceService {
     "FactoryresolutionDate" : "Pending"
   },
     {
-    "Srno" : 1,
+    "id" : 2,
     "TicketNumber" : "1DADTES234567",	
     "Subject" : "Dlect",	
-    "Email" : "dlecta@dlecta",	
+    "Email" : "Hello thanks we are working on your issue",	
     "Status" : "Pending",	
     "Date" : "1/03/2023",	
     "Assignedby" : "Manager",	
@@ -77,10 +77,10 @@ export class TicketingserviceService {
     "FactoryresolutionDate" : "Pending"
   },
     {
-    "Srno" : 1,
+    "id" : 3,
     "TicketNumber" : "1DADTES234567",	
     "Subject" : "Dlect",	
-    "Email" : "dlecta@dlecta",	
+    "Email" : "Hello thanks we are working on your issue",	
     "Status" : "Pending",	
     "Date" : "1/03/2023",	
     "Assignedby" : "Manager",	
@@ -111,10 +111,10 @@ export class TicketingserviceService {
     "FactoryresolutionDate" : "Pending"
   },
       {
-      "Srno" : 1,
+      "id" : 4,
       "TicketNumber" : "1DADTES234567",	
       "Subject" : "Dlect",	
-      "Email" : "dlecta@dlecta",	
+      "Email" : "Hello thanks we are working on your issue",	
       "Status" : "Pending",	
       "Date" : "1/03/2023",	
       "Assignedby" : "Manager",	
@@ -151,13 +151,13 @@ export class TicketingserviceService {
   }
   getResolvedTickets() : Observable<any>{
     let resolvedTickets = this.allTickets.filter((el)=>{
-      return el.status == "Resolved";
+      return el.FactoryResolutionSummary == "Resolved";
     });
     return of(resolvedTickets)
   }
   getPendingTickets() : Observable<any>{
     let activeTickets = this.allTickets.filter((el)=>{
-      return el.status == "Pending";
+      return el.FactoryResolutionSummary == "Pending";
     });
     return of(activeTickets)
   }
@@ -173,12 +173,38 @@ export class TicketingserviceService {
       )
     let data = {
       id : uniqueid,
-      customerName : payload.customerName,
-      roomNumber : payload.roomNumber,
-      issueType : payload.issueType,
-      issueDescription : payload.issueDescription,
-      status : payload.status,
-      dateTime : payload.dateTime
+      TicketNumber : payload.ticketno,
+      Subject : payload.subject,
+      Email : 'Hello thanks we are working on your issue',
+      Status : payload.ticketstatus,
+      Date : payload.ticketdate,
+      Assignedby : payload.assignedBy,
+      Channel : payload.channel,
+      TypeofComplaint : payload.typeOfComplaint,
+      Category : payload.category,
+      CustomerName : payload.customerName,
+      CustomerMailId : payload.customerEmail,
+      ContactNo : payload.contactNumber,
+      Location : payload.customerLocation,
+      State : payload.state,
+      ProductManufacture : payload.productManufacture,
+      ProductName : payload.productName,
+      MFDDate : payload.mfdDate,
+      BatchNo : payload.batchNumber,
+      QtyofSpoiledProduct : payload.spoiledQuantity,
+      BoughtFrom : payload.boughtFrom,
+      ComplaintBrief : payload.complaintBrief,
+      FirstResponseDate : payload.firstResponseDate,
+      Responsetemplate : payload.responseTemplate,
+      ComplaintSummary : payload.complaintSummary,
+      ResolutionSummary : payload.resolutionSummary,
+      ActionTaken : payload.actionTaken,
+      Dateofclosure : payload.dateOfClosure,
+      ActionApprovedBy : payload.actionApprovedBy,
+      ComplaintSharedwithfactory : payload.complaintSharedWithFactory,
+      FactoryResolutionSummary : payload.factoryResolutionSummary,
+      FactoryresolutionDate : payload.factoryResolutionDate
+      
     }
     this.allTickets.push(data);
     console.log(this.allTickets);
@@ -189,7 +215,7 @@ export class TicketingserviceService {
     let index = this.allTickets.findIndex((el)=>{
       return el.id == payload;
     })
-    this.allTickets[index].status = "Resolved"
+    this.allTickets[index].FactoryResolutionSummary = "Resolved"
     // return of(index)
     return this.getPendingTickets();
   }

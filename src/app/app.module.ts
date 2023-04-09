@@ -16,6 +16,7 @@ import { PendingTicketsComponent } from './pending-tickets/pending-tickets.compo
 import { ResolvedTicketsComponent } from './resolved-tickets/resolved-tickets.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgChartsModule } from 'ng2-charts';
+import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NgChartsModule } from 'ng2-charts';
     HomeComponent,
     PendingTicketsComponent,
     ResolvedTicketsComponent,
-    DashboardComponent
+    DashboardComponent,
+    EditTicketComponent
   ],
   imports: [
     BrowserModule,

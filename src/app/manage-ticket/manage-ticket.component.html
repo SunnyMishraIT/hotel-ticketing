@@ -41,25 +41,9 @@
             <td>{{ element.ComplaintSharedwithfactory}}</td>
             <td>{{ element.FactoryResolutionSummary}}</td>
             <td>{{ element.FactoryresolutionDate}}</td>
-            <td>
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="editCalled()">
-                Edit
-              </button>
-            </td>
-            <!-- <th scope="row">{{element.id}}</th>
-            <td>{{element.roomNumber}}</td>
-            <td>{{element.customerName}}</td>
-            <td>{{element.issueType}}</td>
-            <td>{{element.issueDescription}}</td>
-            <td>{{element.dateTime | date : 'medium' }}</td>
-            <td>{{element.status}}</td> -->
-            <td *ngIf="element.status == 'Pending'"><button class="btn btn-success" (click)="resolved(element)">Resolved</button></td>
-            <td *ngIf="element.status == 'Resolved'"><button class="btn btn-danger" (click)="deleteTicket(element)">Delete</button></td>
+            <td *ngIf="element.FactoryResolutionSummary == 'Pending'"><button class="btn btn-success" (click)="resolved(element)">Resolved</button></td>
+            <td *ngIf="element.FactoryResolutionSummary == 'Resolved'"><button class="btn btn-danger" (click)="deleteTicket(element)">Delete</button></td>
           </tr>
         </tbody>
       </table>
-   <!-- <div class="mt-5">
-    <app-pending-tickets></app-pending-tickets>
-    <app-resolved-tickets></app-resolved-tickets>
-   </div> -->
 </div>

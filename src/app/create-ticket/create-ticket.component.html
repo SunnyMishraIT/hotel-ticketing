@@ -1,26 +1,263 @@
-<form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
-  <div class="row">
-    <div class="col">
-      <label for="ticket-no">Ticket Number:</label>
-      <input type="text" id="ticket-no" name="ticket-no" formControlName="ticketno" required>
-      
-      <label for="subject">Subject:</label>
-      <input type="text" id="subject" name="subject" formControlName="subject" required>
-    </div>
-  </div>
+    <form [formGroup]="ticketForm" (ngSubmit)="onSubmit()">
+      <div id="firstCol">
+        <div class="content">
+          <label for="ticket-number">Ticket Number:</label>
+          <input type="text" id="ticket-number" name="ticketNumber" formControlName="ticketno">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" formControlName="subject">
+        </div>
+      </div>
+    <div id="firstCol">
+      <div class="content">
 
-    <!-- <label for="customer-name">Customer Name:</label>
-    <input type="text" id="customer-name" name="customerName" formControlName="name" [(ngModel)]="customerName" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        <label for="status">Status:</label>
+        <select id="status" name="status" formControlName="ticketstatus">
+          <option value="resolved">Resolved</option>
+  <option value="unresolved">Unresolved</option>
+</select>
+</div>
+</div>
+
   
-    <label for="room-number">Room Number:</label>
-    <input type="text" id="room-number" name="roomNumber" formControlName="roomNo" [(ngModel)]="roomNumber" required>
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" formControlName="ticketdate" >
   
-    <label for="issue-type">Issue Type:</label>
-    <input type="text" id="issue-type" name="issueType" formControlName="issue" [(ngModel)]="issueType" required>
-   -->
-    <label for="issue-description">Issue Description:</label>
-    <textarea id="issue-description" name="issueDescription" formControlName="description" [(ngModel)]="issueDescription" rows="5" required></textarea>
+    <label for="assigned-by">Assigned By:</label>
+    <input type="text" id="assigned-by" name="assignedBy" formControlName="assignedBy" >
+      <label for="channel">Channel: </label>
+<select id="channel" name="channel" formControlName="channel">
+  <option value="emial">Email</option>
+  <option value="whatsapp">Whats App</option>
+  <option value="chat">Chat</option>
+  <option value="call">Call</option>
+  <option value="others">Other</option>
+</select>
   
-    <button type="submit">Create Ticket</button>
-  </form>
+    <label for="type-of-complaint">Type of Complaint:</label>
+    <select name="typeOfComplaint" id="type-of-complaint" formControlName="typeOfComplaint">
+      <option value="product-related">Product Related</option>
+      <option value="service-related">Service Related</option>
+      <option value="other">Other</option>
+    </select>
   
+    <label for="category">Category:</label>
+    <select name="category" id="category" formControlName="category">
+      <option value="Curdled Product">Curdled Product</option>
+      <option value="Fungus">Fungus</option>
+      <option value="Contamination">Contamination</option>
+      <option value="Foul Smell">Foul Smell</option>
+      <option value="Spoilt Product">Spoilt Product</option>
+      <option value="Sour Taste">Sour Taste</option>
+      <option value="Bitter Taste">Bitter Taste</option>
+      <option value="Taste weired">Taste weired</option>
+      <option value="Bad Condition">Bad Condition</option>
+      <option value="Uneven Texture">Uneven Texture</option>
+      <option value="Melting Issues">Melting Issues</option>
+      <option value="Rotten product">Rotten product</option>
+      <option value="Mold growth">Mold growth</option>
+      <option value="Puffed Pack">Puffed Pack</option>
+      <option value="Colour Variation">Colour Variation</option>
+      <option value="Damaged product">Damaged product</option>
+      <option value="Torn Product">Torn Product</option>
+      <option value="Improperly stored">Improperly stored</option>
+      <option value="Stale Product">Stale Product</option>
+      <option value="Defective Product">Defective Product</option>
+      <option value="Delay Delivery">Delay Delivery</option>
+      <option value="Incorrect Delivery">Incorrect Delivery</option>
+      <option value="Missing Payment">Missing Payment</option>
+      <option value="Refund Related Issues">Refund Related Issues</option>
+      <option value="Undelivered Item">Undelivered Item</option>
+      <option value="Poor Customer Services">Poor Customer Services</option>
+      <option value="Promise Not Kept">Promise Not Kept</option>
+      <option value="Low Quality Products">Low Quality Products</option>
+      <option value="Other">Other</option>
+    </select>
+  
+    <label for="customer-name">Customer Name:</label>
+    <input type="text" id="customer-name" name="customerName" formControlName="customerName" >
+  
+    <label for="customer-email">Customer Mail Id:</label>
+    <input type="email" id="customer-email" name="customerEmail" formControlName="customerEmail" >
+  
+    <label for="contact-number">Contact No.:</label>
+    <input type="tel" id="contact-number" name="contactNumber" formControlName="contactNumber" >
+  
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" formControlName="customerLocation" >
+  
+    <label for="state">State:</label>
+    <select name="state" id="state" class="state" formControlName="state">
+      <option value="Andaman Nicobar">Andaman Nicobar</option>
+      <option value="Andhra Pradesh">Andhra Pradesh</option>
+      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+      <option value="Assam">Assam</option>
+      <option value="Bihar">Bihar</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Chhattisgarh">Chhattisgarh</option>
+      <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Goa">Goa</option>
+      <option value="Gujarat">Gujarat</option>
+      <option value="Haryana">Haryana</option>
+      <option value="Himachal Pradesh">Himachal Pradesh</option>
+      <option value="Jammu Kashmir">Jammu Kashmir</option>
+      <option value="Jharkhand">Jharkhand</option>
+      <option value="Karnataka">Karnataka</option>
+      <option value="Kerala">Kerala</option>
+      <option value="Ladakh">Ladakh</option>
+      <option value="Lakshadweep">Lakshadweep</option>
+      <option value="Madhya Pradesh">Madhya Pradesh</option>
+      <option value="Maharashtra">Maharashtra</option>
+      <option value="Manipur">Manipur</option>
+      <option value="Meghalaya">Meghalaya</option>
+      <option value="Mizoram">Mizoram</option>
+      <option value="Nagaland">Nagaland</option>
+      <option value="Odisha">Odisha</option>
+      <option value="Puducherry">Puducherry</option>
+      <option value="Punjab">Punjab</option>
+      <option value="Rajasthan">Rajasthan</option>
+      <option value="Sikkim">Sikkim</option>
+      <option value="Tamil Nadu">Tamil Nadu</option>
+      <option value="Telangana">Telangana</option>
+      <option value="Tripura">Tripura</option>
+      <option value="Uttar Pradesh">Uttar Pradesh</option>
+      <option value="Uttarakhand">Uttarakhand</option>
+      <option value="West Bengal">West Bengal</option>
+    </select>
+  
+    <label for="product-manufacture">Product Manufacture:</label>
+    <select name="productManufacture" id="productManufacture" formControlName="productManufacture">
+      <option value="dlecta">Dlecta</option>
+      <option value="dynamix">Dynamix</option>
+    </select>
+  
+    <label for="product-name">Product Name:</label>
+    <select id="product-name" name="productName" formControlName="productName" >
+      <option value="DLECTA MASCARPONE 400GM">DLECTA MASCARPONE 400GM</option>
+      <option value="DAIRY CREAM 0200ML">DAIRY CREAM 0200ML</option>
+      <option value="DAIRY CREAM 1000ML">DAIRY CREAM 1000ML</option>
+      <option value="DLECTA CREAM CHEESE 150GM">DLECTA CREAM CHEESE 150GM</option>
+      <option value="DLECTA CREAM CHEESE 1KG">DLECTA CREAM CHEESE 1KG</option>
+      <option value="DLECTA CREAM CHEESE 400GM">DLECTA CREAM CHEESE 400GM</option>
+      <option value="CHEESE IWS 200 Gm">CHEESE IWS 200 Gm</option>
+      <option value="CHEESE IWS 400 Gm">CHEESE IWS 400 Gm</option>
+      <option value="CHEESE MOZ SHRED POUCH 500Gm  ">CHEESE MOZ SHRED POUCH 500Gm  </option>
+      <option value="CHEESE PCC ANLG CEKA 1.00 KG  ">CHEESE PCC ANLG CEKA 1.00 KG  </option>
+      <option value="CHEESE PCC BLK 1.00 KG  ">CHEESE PCC BLK 1.00 KG  </option>
+      <option value="CHEESE PCC BLK 200Gm  ">CHEESE PCC BLK 200Gm  </option>
+      <option value="CHEESE PCC BLK 400Gm  ">CHEESE PCC BLK 400Gm  </option>
+      <option value="CHEESE SPREAD TUB 180Gm  ">CHEESE SPREAD TUB 180Gm  </option>
+      <option value="DICED FROZEN PIZZA TOPPING 1KG">DICED FROZEN PIZZA TOPPING 1KG</option>
+      <option value="DLECTA CHEESE CUBE 200">DLECTA CHEESE CUBE 200</option>
+      <option value="DLECTA CHEESE MOZ SHRED 140 GM">DLECTA CHEESE MOZ SHRED 140 GM</option>
+      <option value="DLECTA CHEESE SAUCE 1KG">DLECTA CHEESE SAUCE 1KG</option>
+      <option value="DLECTA DAIRY WHIPPING CREAM 1KG">DLECTA DAIRY WHIPPING CREAM 1KG</option>
+      <option value="DLECTA DARK GANACHE 500 gms">DLECTA DARK GANACHE 500 gms</option>
+      <option value="DLECTA FETA CHEESE 100 GMS">DLECTA FETA CHEESE 100 GMS</option>
+      <option value="DLECTA FETA CHEESE BLOCK 250GM">DLECTA FETA CHEESE BLOCK 250GM</option>
+      <option value="DLECTA MASCARPONE 400GM">DLECTA MASCARPONE 400GM</option>
+      <option value="DLECTA MELTO CHEESE 140GMS">DLECTA MELTO CHEESE 140GMS</option>
+      <option value="DLECTA NATURAL CHEDDAR CHEESE 0.200KG">DLECTA NATURAL CHEDDAR CHEESE 0.200KG</option>
+      <option value="DLECTA NATURAL CHEDDAR CHEESE SLICE 0.200GM(PCS-NEW)">DLECTA NATURAL CHEDDAR CHEESE SLICE 0.200GM(PCS-NEW)</option>
+      <option value="DLECTA PARMESAN EXTRA HARD CHEESE 0.100KG">DLECTA PARMESAN EXTRA HARD CHEESE 0.100KG</option>
+      <option value="FETA IN BRINE 200GM">FETA IN BRINE 200GM</option>
+      <option value="GRATED ITALIAN CHEESE 80 GM TUB">GRATED ITALIAN CHEESE 80 GM TUB</option>
+      <option value="MOUSSE MIX 0.200GM">MOUSSE MIX 0.200GM</option>
+      <option value="MOZZARELLA BLOCK 200GM">MOZZARELLA BLOCK 200GM</option>
+      <option value="ND CHEESE CAKE TOPPING GT 1KG">ND CHEESE CAKE TOPPING GT 1KG</option>
+      <option value="ND WHIP TOPPING GT 1 KG">ND WHIP TOPPING GT 1 KG</option>
+      <option value="MILKE 10ML X 100">MILKE 10ML X 100</option>
+      <option value="BUTTER FRESH  IP 500 Gm">BUTTER FRESH  IP 500 Gm</option>
+      <option value="BUTTER TABLE IP 500 Gm ">BUTTER TABLE IP 500 Gm </option>
+      <option value="CHEESE IWS 765 Gm (Pcs)">CHEESE IWS 765 Gm (Pcs)</option>
+      <option value="CHEESE SOS 200S 2.27 KG  ">CHEESE SOS 200S 2.27 KG  </option>
+      <option value="CHEESE MOZ SHRED 2.00 KG  ">CHEESE MOZ SHRED 2.00 KG  </option>
+      <option value="CHEESE NCC BLK 1.00 KG  ">CHEESE NCC BLK 1.00 KG  </option>
+      <option value="DICED FROZEN PIZZA TOPPING 1KG">DICED FROZEN PIZZA TOPPING 1KG</option>
+      <option value="Other">Other</option>
+    </select>
+  
+    <label for="mfd-date">MFD Date:</label>
+    <input type="date" id="mfd-date" name="mfdDate" formControlName="mfdDate" >
+  
+    <label for="batch-number">Batch No.:</label>
+    <input type="text" id="batch-number" name="batchNumber" formControlName="batchNumber" >
+  
+    <label for="spoiled-quantity">Qty of Spoiled Product:</label>
+    <input type="number" id="spoiled-quantity" name="spoiledQuantity" formControlName="spoiledQuantity" >
+  
+    <label for="bought-from">Bought From:</label>
+    <select id="bought-from" name="boughtFrom" formControlName="boughtFrom" >
+      <option value="Dlecta.com">Dlecta.com</option>
+      <option value="Swiggy Instamart">Swiggy Instamart</option>
+      <option value="Zepto">Zepto</option>
+      <option value="Jio Mart">Jio Mart</option>
+      <option value="Metro Cash and Carry">Metro Cash and Carry</option>
+      <option value="Modern Bazaar">Modern Bazaar</option>
+      <option value="Dmart">Dmart</option>
+      <option value="Star bazaar">Star bazaar</option>
+      <option value="Big bazaar">Big bazaar</option>
+      <option value="Nature's Basket">Nature's Basket</option>
+      <option value="Retail Gt Store">Retail Gt Store</option>
+      <option value="Amazon">Amazon</option>
+      <option value="Flipkart">Flipkart</option>
+      <option value="Blink It">Blink It</option>
+      <option value="Hypercity">Hypercity</option>
+      <option value="Reliance Smart">Reliance Smart</option>
+      <option value="Future retail">Future retail</option>
+      <option value="Trent hyperpure">Trent hyperpure</option>
+      <option value="More Supermarket">More Supermarket</option>
+      <option value="Namdhari">Namdhari</option>
+      <option value="Ratnadeep">Ratnadeep</option>
+      <option value="Wellness Forever Medicare Ltd">Wellness Forever Medicare Ltd</option>
+      <option value="Booker">Booker</option>
+      <option value="Sahakari Bhandar">Sahakari Bhandar</option>
+      <option value="Food Hall">Food Hall</option>
+      <option value="Apna Bazaar">Apna Bazaar</option>
+      <option value="Spencers">Spencers</option>
+      <option value="Magsons">Magsons</option>
+      <option value="Vijetha">Vijetha</option>
+      <option value="Balaji Grand">Balaji Grand</option>
+      <option value="Le Marche">Le Marche</option>
+      <option value="Wal Mart">Wal Mart</option>
+      <option value="Other">Other</option>
+    </select>
+  
+    <label for="complaint-brief">Complaint Brief:</label>
+    <textarea id="complaint-brief" name="complaintBrief" formControlName="complaintBrief"></textarea >
+  
+    <label for="first-response-date">1st Response Date:</label>
+    <input type="date" id="first-response-date" name="firstResponseDate" formControlName="firstResponseDate" >
+  
+    <label for="response-template">Response template:</label>
+    <textarea id="response-template" name="responseTemplate" formControlName="responseTemplate"></textarea >
+  
+    <label for="complaint-summary">Complaint Summary:</label>
+    <textarea id="complaint-summary" name="complaintSummary" formControlName="complaintSummary"></textarea >
+  
+    <label for="resolution-summary">Resolution Summary:</label>
+    <textarea id="resolution-summary" name="resolutionSummary" formControlName="resolutionSummary"></textarea >
+
+  <label for="action-taken">Action Taken:</label>
+  <textarea id="action-taken" name="actionTaken" formControlName="actionTaken"></textarea >
+
+  <label for="date-of-closure">Date of closure:</label>
+  <input type="date" id="date-of-closure" name="dateOfClosure" formControlName="dateOfClosure" >
+
+  <label for="action-approved-by">Action Approved By:</label>
+  <input type="text" id="action-approved-by" name="actionApprovedBy" formControlName="actionApprovedBy" >
+
+  <label for="complaint-shared-with-factory">Complaint Shared with factory:</label>
+  <input type="checkbox" id="complaint-shared-with-factory" name="complaintSharedWithFactory" formControlName="complaintSharedWithFactory" >
+
+  <label for="factory-resolution-summary">Factory Resolution Summary:</label>
+  <textarea id="factory-resolution-summary" name="factoryResolutionSummary" formControlName="factoryResolutionSummary"></textarea >
+
+  <label for="factory-resolution-date">Factory resolution Date:</label>
+  <input type="date" id="factory-resolution-date" name="factoryResolutionDate" formControlName="factoryResolutionDate" >
+
+  <button type="submit">Submit</button>
+</form>
+    

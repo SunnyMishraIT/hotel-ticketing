@@ -4,6 +4,7 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CreateTicketComponent } from './create-ticket/create-ticket.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { FaqsComponent } from './faqs/faqs.component';
 import { HomeComponent } from './home/home.component';
 import { ManageTicketComponent } from './manage-ticket/manage-ticket.component';
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path : 'create',
     component : CreateTicketComponent
+  },
+  {
+    path : 'edit',
+    component : EditTicketComponent
   },
   {
     path : 'manage',
